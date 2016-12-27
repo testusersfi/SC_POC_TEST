@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="2" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[We are in Android, now checking for Alert messages...]]>
+    </line>
+    <line>
+      <![CDATA[We are in Android, now checking for Alert messages...]]>
+    </line>
+  </reporter-output>
+  <suite name="Mobile_WorkOrder_TestSuite" duration-ms="107611" started-at="2016-12-21T20:51:23Z" finished-at="2016-12-21T20:53:11Z">
+    <groups>
+      <group name="Final.Regression.iOS">
+        <method signature="LoginTests.testInValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testInValidLogin" class="mwo.tests.LoginTests"/>
+        <method signature="LoginTests.testValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testValidLogin" class="mwo.tests.LoginTests"/>
+      </group> <!-- Final.Regression.iOS -->
+      <group name="Final.Regression.Android">
+        <method signature="LoginTests.testInValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testInValidLogin" class="mwo.tests.LoginTests"/>
+        <method signature="LoginTests.testValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testValidLogin" class="mwo.tests.LoginTests"/>
+      </group> <!-- Final.Regression.Android -->
+    </groups>
+    <test name="Test" duration-ms="107611" started-at="2016-12-21T20:51:23Z" finished-at="2016-12-21T20:53:11Z">
+      <class name="mwo.tests.LoginTests">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeSuite" is-config="true" duration-ms="16226" started-at="2016-12-22T02:21:07Z" finished-at="2016-12-22T02:21:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeClass" is-config="true" duration-ms="0" started-at="2016-12-22T02:21:23Z" finished-at="2016-12-22T02:21:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeMethod" is-config="true" duration-ms="19527" started-at="2016-12-22T02:21:23Z" finished-at="2016-12-22T02:21:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void mwo.tests.LoginTests.testInValidLogin() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testInValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testInValidLogin" duration-ms="32187" started-at="2016-12-22T02:21:42Z" finished-at="2016-12-22T02:22:15Z">
+          <reporter-output>
+            <line>
+              <![CDATA[We are in Android, now checking for Alert messages...]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testInValidLogin -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterMethod" is-config="true" duration-ms="5510" started-at="2016-12-22T02:22:15Z" finished-at="2016-12-22T02:22:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testInValidLogin status=SUCCESS method=LoginTests.testInValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c] output=We are in Android, now checking for Alert messages...]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeMethod" is-config="true" duration-ms="14638" started-at="2016-12-22T02:22:20Z" finished-at="2016-12-22T02:22:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void mwo.tests.LoginTests.testValidLogin() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="testValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testValidLogin" duration-ms="31892" started-at="2016-12-22T02:22:35Z" finished-at="2016-12-22T02:23:07Z">
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[Argument was an invalid selector (e.g. XPath/CSS). (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 53 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 16:57:40'
+System info: host: 'BDC7-L-1Z7XLV1', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_60'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=null, app=C:\Users\srinivas.bavirisetti\Desktop\IFS\Automation_Sample\IFS_AutoSample\bin\Release\IFSPOC_new.apk, networkConnectionEnabled=true, recreateChromeDriverSessions=true, warnings={}, appWaitPackage=null, databaseEnabled=false, version=, deviceName=emulator-5554, platform=ANDROID, appActivity=null, chromedriverExecutable=./liblocal/chromedriver_2.20/chromedriver, desired={appPackage=null, app=C:\Users\srinivas.bavirisetti\Desktop\IFS\Automation_Sample\IFS_AutoSample\bin\Release\IFSPOC_new.apk, recreateChromeDriverSessions=true, appWaitPackage=null, version=, deviceName=Android Emulator, platform=ANDROID, appActivity=null, chromedriverExecutable=./liblocal/chromedriver_2.20/chromedriver, newCommandTimeout=200, platformVersion=7.0, automationName=Appium, browserName=, takesScreenshot=true, platformName=Android, autoAcceptAlerts=true}, newCommandTimeout=200, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, browserName=, takesScreenshot=true, javascriptEnabled=true, platformName=Android, autoAcceptAlerts=true}]
+Session ID: ff36e000-da5b-440a-bba2-738d87c6daf4
+*** Element info: {Using=xpath, value=Login Successfull}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: Argument was an invalid selector (e.g. XPath/CSS). (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 53 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 16:57:40'
+System info: host: 'BDC7-L-1Z7XLV1', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_60'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=null, app=C:\Users\srinivas.bavirisetti\Desktop\IFS\Automation_Sample\IFS_AutoSample\bin\Release\IFSPOC_new.apk, networkConnectionEnabled=true, recreateChromeDriverSessions=true, warnings={}, appWaitPackage=null, databaseEnabled=false, version=, deviceName=emulator-5554, platform=ANDROID, appActivity=null, chromedriverExecutable=./liblocal/chromedriver_2.20/chromedriver, desired={appPackage=null, app=C:\Users\srinivas.bavirisetti\Desktop\IFS\Automation_Sample\IFS_AutoSample\bin\Release\IFSPOC_new.apk, recreateChromeDriverSessions=true, appWaitPackage=null, version=, deviceName=Android Emulator, platform=ANDROID, appActivity=null, chromedriverExecutable=./liblocal/chromedriver_2.20/chromedriver, newCommandTimeout=200, platformVersion=7.0, automationName=Appium, browserName=, takesScreenshot=true, platformName=Android, autoAcceptAlerts=true}, newCommandTimeout=200, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, browserName=, takesScreenshot=true, javascriptEnabled=true, platformName=Android, autoAcceptAlerts=true}]
+Session ID: ff36e000-da5b-440a-bba2-738d87c6daf4
+*** Element info: {Using=xpath, value=Login Successfull}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:388)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:504)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementsByXPath(DefaultGenericMobileDriver.java:133)
+	at io.appium.java_client.AppiumDriver.findElementsByXPath(AppiumDriver.java:208)
+	at org.openqa.selenium.By$ByXPath.findElements(By.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:351)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElements(DefaultGenericMobileDriver.java:47)
+	at io.appium.java_client.AppiumDriver.findElements(AppiumDriver.java:176)
+	at com.appium.base.PageBase.isElementPresent(Unknown Source)
+	at mwo.pages.LoginPage.validLoginVerification(Unknown Source)
+	at mwo.tests.LoginTests.testValidLogin(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          <reporter-output>
+            <line>
+              <![CDATA[We are in Android, now checking for Alert messages...]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testValidLogin -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterMethod" is-config="true" duration-ms="3845" started-at="2016-12-22T02:23:07Z" finished-at="2016-12-22T02:23:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testValidLogin status=FAILURE method=LoginTests.testValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c] output=We are in Android, now checking for Alert messages...]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterClass" is-config="true" duration-ms="0" started-at="2016-12-22T02:23:11Z" finished-at="2016-12-22T02:23:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterSuite" is-config="true" duration-ms="770" started-at="2016-12-22T02:23:11Z" finished-at="2016-12-22T02:23:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- mwo.tests.LoginTests -->
+    </test> <!-- Test -->
+  </suite> <!-- Mobile_WorkOrder_TestSuite -->
+</testng-results>

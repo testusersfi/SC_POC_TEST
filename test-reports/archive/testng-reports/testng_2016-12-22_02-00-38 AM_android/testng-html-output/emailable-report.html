@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TestNG Report</title><style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}</style></head><body><table><tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr><tr><th colspan="7">Mobile_WorkOrder_TestSuite</th></tr><tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">58,390</td><td>Final.All, Final.*</td><td></td></tr></table><table><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Mobile_WorkOrder_TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">mwo.tests.LoginTests</td><td><a href="#m0">testInValidLogin</a></td><td rowspan="1">1482352320232</td><td rowspan="1">3246</td></tr><tr class="failedeven"><td><a href="#m1">testValidLogin</a></td><td rowspan="1">1482352348324</td><td rowspan="1">3786</td></tr></tbody></table><h2>Test</h2><h3 id="m0">mwo.tests.LoginTests#testInValidLogin</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">We are in Android, now checking for Alert messages...</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.InvalidSelectorException: Argument was an invalid selector (e.g. XPath/CSS). (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 18 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 16:57:40&apos;
+System info: host: &apos;BDC7-L-1Z7XLV1&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_60&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=null, app=C:\Users\srinivas.bavirisetti\Desktop\IFS\Automation_Sample\IFS_AutoSample\bin\Release\IFSPOC_new.apk, networkConnectionEnabled=true, recreateChromeDriverSessions=true, warnings={}, appWaitPackage=null, databaseEnabled=false, version=, deviceName=emulator-5554, platform=ANDROID, appActivity=null, chromedriverExecutable=./liblocal/chromedriver_2.20/chromedriver, desired={appPackage=null, app=C:\Users\srinivas.bavirisetti\Desktop\IFS\Automation_Sample\IFS_AutoSample\bin\Release\IFSPOC_new.apk, recreateChromeDriverSessions=true, appWaitPackage=null, version=, deviceName=Android Emulator, platform=ANDROID, appActivity=null, chromedriverExecutable=./liblocal/chromedriver_2.20/chromedriver, newCommandTimeout=200, platformVersion=7.0, automationName=Appium, browserName=, takesScreenshot=true, platformName=Android, autoAcceptAlerts=true}, newCommandTimeout=200, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, browserName=, takesScreenshot=true, javascriptEnabled=true, platformName=Android, autoAcceptAlerts=true}]
+Session ID: f2470433-8ab4-4bdc-a410-f66ab12ad9a4
+*** Element info: {Using=xpath, value=No Result}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:388)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:504)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementsByXPath(DefaultGenericMobileDriver.java:133)
+	at io.appium.java_client.AppiumDriver.findElementsByXPath(AppiumDriver.java:208)
+	at org.openqa.selenium.By$ByXPath.findElements(By.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:351)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElements(DefaultGenericMobileDriver.java:47)
+	at io.appium.java_client.AppiumDriver.findElements(AppiumDriver.java:176)
+	at com.appium.base.PageBase.isElementPresent(Unknown Source)
+	at mwo.pages.LoginPage.AppLaunchVerification(Unknown Source)
+	at mwo.tests.LoginTests.testInValidLogin(Unknown Source)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m1">mwo.tests.LoginTests#testValidLogin</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">We are in Android, now checking for Alert messages...</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.InvalidSelectorException: Argument was an invalid selector (e.g. XPath/CSS). (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 62 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 16:57:40&apos;
+System info: host: &apos;BDC7-L-1Z7XLV1&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_60&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=null, app=C:\Users\srinivas.bavirisetti\Desktop\IFS\Automation_Sample\IFS_AutoSample\bin\Release\IFSPOC_new.apk, networkConnectionEnabled=true, recreateChromeDriverSessions=true, warnings={}, appWaitPackage=null, databaseEnabled=false, version=, deviceName=emulator-5554, platform=ANDROID, appActivity=null, chromedriverExecutable=./liblocal/chromedriver_2.20/chromedriver, desired={appPackage=null, app=C:\Users\srinivas.bavirisetti\Desktop\IFS\Automation_Sample\IFS_AutoSample\bin\Release\IFSPOC_new.apk, recreateChromeDriverSessions=true, appWaitPackage=null, version=, deviceName=Android Emulator, platform=ANDROID, appActivity=null, chromedriverExecutable=./liblocal/chromedriver_2.20/chromedriver, newCommandTimeout=200, platformVersion=7.0, automationName=Appium, browserName=, takesScreenshot=true, platformName=Android, autoAcceptAlerts=true}, newCommandTimeout=200, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, browserName=, takesScreenshot=true, javascriptEnabled=true, platformName=Android, autoAcceptAlerts=true}]
+Session ID: 826fddec-3bd7-471d-9126-5fdfd7569e71
+*** Element info: {Using=xpath, value=No Result}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:388)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:504)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementsByXPath(DefaultGenericMobileDriver.java:133)
+	at io.appium.java_client.AppiumDriver.findElementsByXPath(AppiumDriver.java:208)
+	at org.openqa.selenium.By$ByXPath.findElements(By.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:351)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElements(DefaultGenericMobileDriver.java:47)
+	at io.appium.java_client.AppiumDriver.findElements(AppiumDriver.java:176)
+	at com.appium.base.PageBase.isElementPresent(Unknown Source)
+	at mwo.pages.LoginPage.AppLaunchVerification(Unknown Source)
+	at mwo.tests.LoginTests.testValidLogin(Unknown Source)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p></body></html>

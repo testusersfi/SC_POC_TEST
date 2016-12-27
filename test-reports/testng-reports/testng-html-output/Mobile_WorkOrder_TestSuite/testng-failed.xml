@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Mobile_WorkOrder_TestSuite]">
+  <test name="Test(failed)">
+    <groups>
+      <run>
+        <include name="Final.All"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="mwo.tests.LoginTests">
+        <methods>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="testInValidLogin"/>
+          <include name="afterMethod"/>
+          <include name="testValidLogin"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- mwo.tests.LoginTests -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Mobile_WorkOrder_TestSuite] -->

@@ -1,0 +1,37 @@
+############################## PRE ##############################
+
+	before_all do
+		#Suppress update as api.rubygems.org is down
+		#update_fastlane
+	end
+
+######################### PUBLIC LANES ##########################
+
+###### Platform Android Appium Test #######
+
+platform :android do
+
+	#------------------------- Android Appium Test -------------------------#
+	lane :appium do
+		# Execute Appium Test
+		sh ("./run_appium_android.sh local")		
+	end
+	
+	lane :appiumfromhockey do
+		# Execute Appium Test
+		sh ("./run_appium_android.sh hockey")		
+	end
+
+end #end platform android for Appium Test Execution
+
+###### Platform iOS Appium Test #######
+
+platform :ios do
+
+	#------------------------- Android Appium Test -------------------------#
+	lane :appium do
+		# Execute Appium Test
+		sh ("./run_appium_ios.sh")		
+	end
+
+end #end platform ios for Appium Test Execution

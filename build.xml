@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Test" default="runtestngtests">
+	<property environment="env" />
+
+	<condition property="ANDROID_PLATFORM_VERSION" value="${env.ANDROID_PLATFORM_VERSION}">
+		<isset property="env.ANDROID_PLATFORM_VERSION" />
+	</condition>
+
+
+	<!-- Load the app specific property file -->
+	<target name="test.app.name">
+		<condition property="is_mwo">
+			<equals arg1="${APPNAME}" arg2="mwo" />
+		</condition>
+	</target>
+	
+	<property file="app_${APPNAME}.properties" />
+	<echo message="APPNAME = ${APPNAME}"/>
+	<echo message="APP SPECIFIC PROPERTY = app_${APPNAME}.properties"/>
+	
+	<target name="load_mwo_properties" if="${is_mwo}" depends="test.app.name">
+		<property file="app_mwo.properties" />
+	</target>
+
+
+	<target name="load_app_properties" depends="load_mwo_properties">
+		<!-- Then load the other property files -->
+		<property File="config.properties" />
+
+		<!-- Get the name of the testNG suite xml -->
+		<property name="testng.xmlsuite.filename" value="${testng.xmlsuite.filename}" />
+	</target>
+
+
+
+	<property name="basedir" value="." />
+	<property name="src.main.java.dir" value="src/main/java" />
+	<property name="src.test.java.dir" value="src/test/java" />
+	<property name="bin.dir" value="${basedir}/bin" />
+	<property name="bin.main.dir" value="${bin.dir}/main" />
+	<property name="bin.test.dir" value="${bin.dir}/test" />
+
+	<property name="cucumber.libraries.path" value="${basedir}/lib/cucumber-libs" />
+	<property name="testng.libraries.path" value="${basedir}/lib/testng_libs" />
+	<property name="referenced.libraries.path" value="${basedir}/lib" />
+
+	<property name="testng.xmlsuite.path" value="${basedir}" />
+	<property name="test.reports.basedir" value="./test-reports" />
+	<property name="testng.reports.basedir" value="${test.reports.basedir}/testng-reports" />
+	<property name="cucumber.reports.basedir" value="${test.reports.basedir}/cucumber-reports" />
+	<property name="testng.html.report.dir" value="${testng.reports.basedir}/testng-html-output" />
+	<property name="testng.xslt.report.dir"
+		value="${basedir}/test-reports/testng-reports/testng-xslt-output" />
+	<property name="cucumber.junit.report.dir"
+		value="${cucumber.reports.basedir}/cucumber-ant-junit-report" />
+
+	<echo message="test.reports.basedir = ${test.reports.basedir}" />
+	<echo message="testng.reports.basedir = ${testng.reports.basedir}" />
+	<echo message="cucumber.reports.basedir = ${cucumber.reports.basedir}" />
+
+	<!-- get date & timestamp for archiving the results -->
+	<tstamp>
+		<format property="year" pattern="yyyy" />
+		<format property="DSTAMP" pattern="yyyy-MM-dd" />
+		<format property="TSTAMP" pattern="HH:mm:ss" />
+		<format property="dateversion" pattern="yyyy.MM.dd.HH:mm:ss" />
+		<format property="time.stamp" pattern="yyyy-MM-dd_HH-mm-ss aa_" />
+	</tstamp>
+
+	<property name="testng.reports.archive.dir"
+		value="${test.reports.basedir}/archive/testng-reports/testng_${time.stamp}${platform}" />
+	<property name="cucumber.reports.archive.dir"
+		value="${test.reports.basedir}/archive/cucumber-reports/cucumber_${time.stamp}${platform}" />
+
+	<taskdef resource="testngtasks" classpath="${testng.libraries.path}/testng.jar" />
+
+	
+	<!-- Target to run testng tests -->
+	<target name="runtestngtests"
+		depends="load_app_properties, delete-dir,create-dir,compile-main,compile-test">
+		<mkdir dir="${testng.html.report.dir}" />
+		<mkdir dir="${testng.xslt.report.dir}" />
+		<echo message="Running TestNG tests now..." />
+		<testng classpathref="test.exec.path" outputDir="${testng.html.report.dir}"
+			haltOnfailure="false">
+			<xmlfileset dir="${testng.xmlsuite.path}" includes="${testng.xmlsuite.filename}" />
+		</testng>
+		<xslt in="${testng.html.report.dir}/testng-results.xml"
+			style="${basedir}/src/test/resources/config/testng-results.xsl" out="${testng.xslt.report.dir}/index.html"
+			processor="SaxonLiaison">
+			<param expression="${testng.xslt.report.dir}" name="testNgXslt.outputDir" />
+			<param expression="true" name="testNgXslt.sortTestCaseLinks" />
+			<param expression="FAIL,SKIP,PASS,CONF,BY_CLASS" name="testNgXslt.testDetailsFilter" />
+			<param expression="true" name="testNgXslt.showRuntimeTotals" />
+			<classpath refid="test.exec.path" />
+		</xslt>
+		<!-- Archive the TestNG reports to 'archive' directory -->
+		<mkdir dir="${testng.reports.archive.dir}" />
+		<copy todir="${testng.reports.archive.dir}">
+			<fileset dir="${testng.reports.basedir}" />
+		</copy>
+	</target>
+
+	<!-- <target name="ViewTestNGReport" depends="ExecTestNGTest"> <exec executable="${browser}" 
+		spawn="yes"> <arg line="'file:///${testng_report}/index.html'" /> </exec> 
+		</target> -->
+
+	<!-- Target to clean all the directories -->
+	<target name="delete-dir" description="Delete all necessary directories">
+		<echo message="Deleting Classes and Reports folders now..." />
+		<delete dir="${bin.dir}" />
+		<delete dir="${testng.reports.basedir}" />
+		<delete dir="${cucumber.reports.basedir}" />
+	</target>
+
+	<!-- Target to create required directories -->
+	<target name="create-dir" description="Creates all necessary directories">
+		<echo message="Creating Classes and Reports folders now..." />
+		<mkdir dir="${bin.dir}" />
+		<mkdir dir="${bin.main.dir}" />
+		<mkdir dir="${bin.test.dir}" />
+		<mkdir dir="${testng.reports.basedir}" />
+		<mkdir dir="${cucumber.reports.basedir}" />
+	</target>
+
+	<!-- Sourcepath for main Java source. -->
+	<path id="src.main.path">
+		<fileset dir="${src.main.java.dir}">
+			<include name="**.*java" />
+		</fileset>
+	</path>
+
+	<!-- Sourcepath for test Java source. -->
+	<path id="src.test.path">
+		<fileset dir="${src.test.java.dir}">
+			<include name="**.*java" />
+		</fileset>
+	</path>
+
+	<!-- Path for main Java dependencies. -->
+	<path id="lib.path">
+		<fileset dir="${referenced.libraries.path}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${testng.libraries.path}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${cucumber.libraries.path}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Main compile path. -->
+	<path id="main.compile.path">
+		<path refid="src.main.path" />
+		<path refid="lib.path" />
+	</path>
+
+	<!-- Test compile path. -->
+	<path id="test.compile.path">
+		<path refid="src.test.path" />
+		<path refid="src.main.path" />
+		<path refid="lib.path" />
+		<pathelement location="${bin.main.dir}" />
+	</path>
+
+	<!-- Execution path. -->
+	<path id="test.exec.path">
+		<path refid="lib.path" />
+		<pathelement location="${bin.main.dir}" />
+		<pathelement location="${bin.test.dir}" />
+	</path>
+
+	<!-- Compile main Java sources. -->
+	<target name="compile-main">
+		<echo message="Compiling main sources." />
+		<javac includeantruntime="false" srcdir="${src.main.java.dir}"
+			destdir="${bin.main.dir}">
+			<classpath refid="main.compile.path" />
+		</javac>
+	</target>
+
+	<!-- Compile test Java sources. -->
+	<target name="compile-test" depends="compile-main">
+		<echo message="Compiling test sources." />
+		<javac includeantruntime="false" srcdir="${src.test.java.dir}"
+			destdir="${bin.test.dir}">
+			<classpath refid="test.compile.path" />
+		</javac>
+	</target>
+</project>
