@@ -2,7 +2,7 @@
 <testng-results skipped="2" failed="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Mobile_WorkOrder_TestSuite" duration-ms="17812" started-at="2016-12-23T18:24:09Z" finished-at="2016-12-23T18:24:27Z">
+  <suite name="Mobile_WorkOrder_TestSuite" duration-ms="3953" started-at="2016-12-28T14:13:28Z" finished-at="2016-12-28T14:13:32Z">
     <groups>
       <group name="Final.Regression.iOS">
         <method signature="LoginTests.testInValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testInValidLogin" class="mwo.tests.LoginTests"/>
@@ -13,16 +13,16 @@
         <method signature="LoginTests.testValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testValidLogin" class="mwo.tests.LoginTests"/>
       </group> <!-- Final.Regression.Android -->
     </groups>
-    <test name="Test" duration-ms="17812" started-at="2016-12-23T18:24:09Z" finished-at="2016-12-23T18:24:27Z">
+    <test name="Test" duration-ms="3953" started-at="2016-12-28T14:13:28Z" finished-at="2016-12-28T14:13:32Z">
       <class name="mwo.tests.LoginTests">
-        <test-method status="FAIL" signature="beforeSuite()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeSuite" is-config="true" duration-ms="0" started-at="2016-12-23T23:51:50Z" finished-at="2016-12-23T23:51:50Z">
+        <test-method status="FAIL" signature="beforeSuite()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeSuite" is-config="true" duration-ms="0" started-at="2016-12-28T19:41:19Z" finished-at="2016-12-28T19:41:19Z">
           <exception class="io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException">
             <message>
-              <![CDATA[The local appium server has not been started. The given Node.js executable: C:\Program Files (x86)\Appium\node.exe Arguments: [C:\Program Files (x86)\Appium\node_modules\appium\bin\appium.js, --port, 4723, --address, 127.0.0.1, --log, C:\Users\srinivas.bavirisetti\workspace\IFS\MobileWorkOrder\log\appiumServerLog.txt] 
+              <![CDATA[The local appium server has not been started. The given Node.js executable: C:\Program Files (x86)\Appium\node.exe Arguments: [C:\Program Files (x86)\Appium\node_modules\appium\bin\appium.js, --port, 4723, --address, 127.0.0.1, --log, C:\Users\srinivas.bavirisetti\workspace\Github_POC_Test\log\appiumServerLog.txt] 
 ]]>
             </message>
             <full-stacktrace>
-              <![CDATA[io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException: The local appium server has not been started. The given Node.js executable: C:\Program Files (x86)\Appium\node.exe Arguments: [C:\Program Files (x86)\Appium\node_modules\appium\bin\appium.js, --port, 4723, --address, 127.0.0.1, --log, C:\Users\srinivas.bavirisetti\workspace\IFS\MobileWorkOrder\log\appiumServerLog.txt] 
+              <![CDATA[io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException: The local appium server has not been started. The given Node.js executable: C:\Program Files (x86)\Appium\node.exe Arguments: [C:\Program Files (x86)\Appium\node_modules\appium\bin\appium.js, --port, 4723, --address, 127.0.0.1, --log, C:\Users\srinivas.bavirisetti\workspace\Github_POC_Test\log\appiumServerLog.txt] 
 
 	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:151)
 	at com.appium.base.AppiumSingleTest.startAppiumServer(Unknown Source)
@@ -44,7 +44,7 @@
 	at org.testng.TestNG.run(TestNG.java:1048)
 	at org.testng.TestNG.privateMain(TestNG.java:1355)
 	at org.testng.TestNG.main(TestNG.java:1324)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://127.0.0.1:4723/wd/hub/status] to be available after 120333 ms
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://127.0.0.1:4723/wd/hub/status] to be available after 120005 ms
 	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:107)
 	at io.appium.java_client.service.local.AppiumDriverLocalService.ping(AppiumDriverLocalService.java:113)
 	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:139)
@@ -63,11 +63,11 @@ Caused by: java.util.concurrent.TimeoutException
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeClass" is-config="true" duration-ms="0" started-at="2016-12-23T23:54:09Z" finished-at="2016-12-23T23:54:09Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeClass" is-config="true" duration-ms="0" started-at="2016-12-28T19:43:28Z" finished-at="2016-12-28T19:43:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="FAIL" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2016-12-23T23:54:09Z" finished-at="2016-12-23T23:54:09Z">
+        <test-method status="FAIL" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2016-12-28T19:43:28Z" finished-at="2016-12-28T19:43:28Z">
           <params>
             <param index="0">
               <value>
@@ -167,11 +167,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="SKIP" signature="testInValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testInValidLogin" duration-ms="0" started-at="2016-12-23T23:54:26Z" finished-at="2016-12-23T23:54:26Z">
+        <test-method status="SKIP" signature="testInValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testInValidLogin" duration-ms="0" started-at="2016-12-28T19:43:31Z" finished-at="2016-12-28T19:43:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInValidLogin -->
-        <test-method status="FAIL" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-12-23T23:54:26Z" finished-at="2016-12-23T23:54:26Z">
+        <test-method status="FAIL" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-12-28T19:43:31Z" finished-at="2016-12-28T19:43:31Z">
           <params>
             <param index="0">
               <value>
@@ -215,7 +215,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2016-12-23T23:54:26Z" finished-at="2016-12-23T23:54:26Z">
+        <test-method status="FAIL" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2016-12-28T19:43:31Z" finished-at="2016-12-28T19:43:31Z">
           <params>
             <param index="0">
               <value>
@@ -315,7 +315,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-12-23T23:54:27Z" finished-at="2016-12-23T23:54:27Z">
+        <test-method status="SKIP" signature="testValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testValidLogin" duration-ms="1" started-at="2016-12-28T19:43:32Z" finished-at="2016-12-28T19:43:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLogin -->
+        <test-method status="FAIL" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-12-28T19:43:32Z" finished-at="2016-12-28T19:43:32Z">
           <params>
             <param index="0">
               <value>
@@ -359,15 +363,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="testValidLogin()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="testValidLogin" duration-ms="0" started-at="2016-12-23T23:54:27Z" finished-at="2016-12-23T23:54:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidLogin -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterClass" is-config="true" duration-ms="0" started-at="2016-12-23T23:54:27Z" finished-at="2016-12-23T23:54:27Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterClass" is-config="true" duration-ms="0" started-at="2016-12-28T19:43:32Z" finished-at="2016-12-28T19:43:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterSuite" is-config="true" duration-ms="0" started-at="2016-12-23T23:54:27Z" finished-at="2016-12-23T23:54:27Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:mwo.tests.LoginTests@1fee20c]" name="afterSuite" is-config="true" duration-ms="0" started-at="2016-12-28T19:43:32Z" finished-at="2016-12-28T19:43:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
