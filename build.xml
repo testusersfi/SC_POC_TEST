@@ -84,7 +84,6 @@
 		<echo message="Deleting Classes and Reports folders now..." />
 		<delete dir="${bin.dir}" />
 		<delete dir="${testng.reports.basedir}" />
-		<delete dir="${cucumber.reports.basedir}" />
 	</target>
 
 	<!-- Target to create required directories -->
@@ -94,7 +93,6 @@
 		<mkdir dir="${bin.main.dir}" />
 		<mkdir dir="${bin.test.dir}" />
 		<mkdir dir="${testng.reports.basedir}" />
-		<mkdir dir="${cucumber.reports.basedir}" />
 	</target>
 
 	<!-- Sourcepath for main Java source. -->
@@ -117,9 +115,6 @@
 			<include name="**/*.jar" />
 		</fileset>
 		<fileset dir="${testng.libraries.path}">
-			<include name="**/*.jar" />
-		</fileset>
-		<fileset dir="${cucumber.libraries.path}">
 			<include name="**/*.jar" />
 		</fileset>
 	</path>
