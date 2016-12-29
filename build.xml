@@ -31,47 +31,25 @@
 		<property name="testng.xmlsuite.filename" value="${testng.xmlsuite.filename}" />
 	</target>
 
-
-
 	<property name="basedir" value="." />
 	<property name="src.main.java.dir" value="src/main/java" />
 	<property name="src.test.java.dir" value="src/test/java" />
 	<property name="bin.dir" value="${basedir}/bin" />
 	<property name="bin.main.dir" value="${bin.dir}/main" />
 	<property name="bin.test.dir" value="${bin.dir}/test" />
-
-	<property name="cucumber.libraries.path" value="${basedir}/lib/cucumber-libs" />
 	<property name="testng.libraries.path" value="${basedir}/lib/testng_libs" />
 	<property name="referenced.libraries.path" value="${basedir}/lib" />
 
 	<property name="testng.xmlsuite.path" value="${basedir}" />
 	<property name="test.reports.basedir" value="./test-reports" />
 	<property name="testng.reports.basedir" value="${test.reports.basedir}/testng-reports" />
-	<property name="cucumber.reports.basedir" value="${test.reports.basedir}/cucumber-reports" />
 	<property name="testng.html.report.dir" value="${testng.reports.basedir}/testng-html-output" />
 	<property name="testng.xslt.report.dir"
 		value="${basedir}/test-reports/testng-reports/testng-xslt-output" />
-	<property name="cucumber.junit.report.dir"
-		value="${cucumber.reports.basedir}/cucumber-ant-junit-report" />
+
 
 	<echo message="test.reports.basedir = ${test.reports.basedir}" />
 	<echo message="testng.reports.basedir = ${testng.reports.basedir}" />
-	<echo message="cucumber.reports.basedir = ${cucumber.reports.basedir}" />
-
-	<!-- get date & timestamp for archiving the results -->
-	<tstamp>
-		<format property="year" pattern="yyyy" />
-		<format property="DSTAMP" pattern="yyyy-MM-dd" />
-		<format property="TSTAMP" pattern="HH:mm:ss" />
-		<format property="dateversion" pattern="yyyy.MM.dd.HH:mm:ss" />
-		<format property="time.stamp" pattern="yyyy-MM-dd_HH-mm-ss aa_" />
-	</tstamp>
-
-	<property name="testng.reports.archive.dir"
-		value="${test.reports.basedir}/archive/testng-reports/testng_${time.stamp}${platform}" />
-	<property name="cucumber.reports.archive.dir"
-		value="${test.reports.basedir}/archive/cucumber-reports/cucumber_${time.stamp}${platform}" />
-
 	<taskdef resource="testngtasks" classpath="${testng.libraries.path}/testng.jar" />
 
 	
@@ -100,10 +78,6 @@
 			<fileset dir="${testng.reports.basedir}" />
 		</copy>
 	</target>
-
-	<!-- <target name="ViewTestNGReport" depends="ExecTestNGTest"> <exec executable="${browser}" 
-		spawn="yes"> <arg line="'file:///${testng_report}/index.html'" /> </exec> 
-		</target> -->
 
 	<!-- Target to clean all the directories -->
 	<target name="delete-dir" description="Delete all necessary directories">
