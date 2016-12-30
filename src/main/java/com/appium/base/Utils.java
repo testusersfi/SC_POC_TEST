@@ -74,7 +74,7 @@ public class Utils {
     EXTENT_REPORTS_DIRNAME =
         getChildDir(getChildDir("test-reports"), "extent-reports").getAbsolutePath();
     EXTENT_REPORTS_FILENAME = new File(new File(EXTENT_REPORTS_DIRNAME),
-        "CALiveAppiumExtentReport_" + Utils.PROPERTIES.getProperty("platform") + ".html")
+        "TestAppExtentReport_" + Utils.PROPERTIES.getProperty("platform") + ".html")
             .getAbsolutePath();
     SCREENSHOTS_DIRNAME = getChildDir(getChildDir("target"), "screenshot_int").getAbsolutePath();
 

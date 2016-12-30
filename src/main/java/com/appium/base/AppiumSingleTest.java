@@ -111,17 +111,18 @@ public class AppiumSingleTest {
   }
 
   public static void startAppiumServer() {
-    File node = findCustomNode();
-    File appiumjs = findCustomAppiumJs();
+	String Appium_Node_Path= "C:/Program Files (x86)/Appium/node.exe";
+	String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/bin/appium.js";
     File logdir = Utils.getChildDir("log");
     File appiumlog = new File(logdir, "appiumServerLog.txt");
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("autoAcceptAlerts", true);
     service = AppiumDriverLocalService
-        .buildService(new AppiumServiceBuilder().usingDriverExecutable(node).withAppiumJS(appiumjs)
+        .buildService(new AppiumServiceBuilder().usingDriverExecutable(new File(Appium_Node_Path)).withAppiumJS(new File(Appium_JS_Path))
             .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withArgument(AndroidServerFlag.BOOTSTRAP_PORT_NUMBER,"4724").withLogFile(appiumlog));
-
+    Utils.log("Service URL: " + service.toString());
     service.start();
+    Utils.log("Service running: " + service.isRunning());
     Utils.log("Service URL:" + service.getUrl());
     assertEquals(true, service.isRunning());
   }
