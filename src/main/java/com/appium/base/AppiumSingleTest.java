@@ -21,6 +21,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.service.local.flags.AndroidServerFlag;
 
 public class AppiumSingleTest {
   protected AppiumDriver<MobileElement> driver = null;
@@ -118,7 +119,8 @@ public class AppiumSingleTest {
     capabilities.setCapability("autoAcceptAlerts", true);
     service = AppiumDriverLocalService
         .buildService(new AppiumServiceBuilder().usingDriverExecutable(node).withAppiumJS(appiumjs)
-            .withLogFile(appiumlog).withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723));
+            .withIPAddress(APPIUM_SERVER_ADDRESS).withArgument(AndroidServerFlag.BOOTSTRAP_PORT_NUMBER,"4723").withLogFile(appiumlog));
+
     service.start();
     Utils.log("Service URL:" + service.getUrl());
     assertEquals(true, service.isRunning());
