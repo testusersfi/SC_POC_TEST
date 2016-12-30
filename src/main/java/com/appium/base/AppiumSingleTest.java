@@ -119,8 +119,8 @@ public class AppiumSingleTest {
     capabilities.setCapability("autoAcceptAlerts", true);
     service = AppiumDriverLocalService
         .buildService(new AppiumServiceBuilder().usingDriverExecutable(new File(Appium_Node_Path)).withAppiumJS(new File(Appium_JS_Path))
-            .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withArgument(AndroidServerFlag.BOOTSTRAP_PORT_NUMBER,"4724").withLogFile(appiumlog));
-    Utils.log("Service URL: " + service.toString());
+            .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));
+    Utils.log("Service URL: " + service.getUrl().toString());
     service.start();
     Utils.log("Service running: " + service.isRunning());
     Utils.log("Service URL:" + service.getUrl());
