@@ -110,7 +110,7 @@ public class AppiumSingleTest {
     }
   }
 
-  public static void startAppiumServer() {
+  public static void startAppiumServer() throws InterruptedException {
 	String Appium_Node_Path= "C:/Program Files (x86)/Appium/node.exe";
 	//String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/bin/appium.js";
     String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/lib/server/main.js";
@@ -123,8 +123,9 @@ public class AppiumSingleTest {
             .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));*/
             service = AppiumDriverLocalService
         .buildService(new AppiumServiceBuilder().usingDriverExecutable(new File(Appium_Node_Path)).withAppiumJS(new File(Appium_JS_Path))
-            .withIPAddress(APPIUM_SERVER_ADDRESS).usingAnyFreePort().withLogFile(appiumlog));
+            .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));
     Utils.log("Service URL: " + service.getUrl().toString());
+    Thread.sleep(12000);
     service.start();
     Utils.log("Service running: " + service.isRunning());
     Utils.log("Service URL:" + service.getUrl());
