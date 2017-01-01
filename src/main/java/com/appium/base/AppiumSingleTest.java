@@ -112,7 +112,8 @@ public class AppiumSingleTest {
 
   public static void startAppiumServer() {
 	String Appium_Node_Path= "C:/Program Files (x86)/Appium/node.exe";
-	String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/bin/appium.js";
+	//String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/bin/appium.js";
+    String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/lib/server/main.js";
     File logdir = Utils.getChildDir("log");
     File appiumlog = new File(logdir, "appiumServerLog.txt");
     DesiredCapabilities capabilities = new DesiredCapabilities();
