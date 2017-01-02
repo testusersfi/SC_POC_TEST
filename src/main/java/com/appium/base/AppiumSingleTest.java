@@ -80,7 +80,7 @@ public class AppiumSingleTest {
     
     
     driver =
-        new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), capabilities);
+        new AndroidDriver<MobileElement>(new URL("http://192.168.56.1:4723/wd/hub"), capabilities);
   }
 
   public void iosSetup() throws MalformedURLException {
