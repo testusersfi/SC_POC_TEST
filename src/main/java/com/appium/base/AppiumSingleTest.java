@@ -76,8 +76,8 @@ public class AppiumSingleTest {
     File app = new File(Utils.PROPERTIES.getProperty("ANDROID_APP_PATH"));
     capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
     Utils.log("----APK Absolute Path: " + app.getAbsolutePath());
-
-
+    
+    
     driver =
         new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
   }
@@ -157,7 +157,7 @@ public class AppiumSingleTest {
          DefaultExecutor executor = new DefaultExecutor();
          executor.setExitValue(1);
          executor.execute(command, resultHandler);
-         Thread.sleep(20000);
+         Thread.sleep(60000*5);
          
       } catch (Exception e)
       {
@@ -171,4 +171,5 @@ public class AppiumSingleTest {
       service.stop();
     }
   }
+  
 }
