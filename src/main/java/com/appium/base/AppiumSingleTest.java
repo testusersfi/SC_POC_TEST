@@ -62,11 +62,11 @@ public class AppiumSingleTest {
     capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,
         Utils.PROPERTIES.getProperty("ANDROID_APP_ACTIVITY"));
 
-    capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 200);
+    //capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 200);
 
-    capabilities.setCapability("chromedriverExecutable",
-        Utils.PROPERTIES.getProperty("CHROME_DRIVER_EXECUTABLE"));
-    capabilities.setCapability("browserName", "");
+   // capabilities.setCapability("chromedriverExecutable",
+   //     Utils.PROPERTIES.getProperty("CHROME_DRIVER_EXECUTABLE"));
+   // capabilities.setCapability("browserName", "");
     capabilities.setCapability("autoAcceptAlerts", true);
     capabilities.setCapability("recreateChromeDriverSessions", true);
     capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, true);
