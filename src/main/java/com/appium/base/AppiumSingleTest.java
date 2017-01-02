@@ -158,7 +158,7 @@ public class AppiumSingleTest {
          DefaultExecutor executor = new DefaultExecutor();
          executor.setExitValue(1);
          executor.execute(command, resultHandler);
-         Thread.sleep(60000*5);
+         Thread.sleep(60000*3);
          
       } catch (Exception e)
       {
