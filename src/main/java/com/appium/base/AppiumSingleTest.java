@@ -8,6 +8,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.exec.CommandLine;
+import org.apache.commons.exec.DefaultExecuteResultHandler;
+import org.apache.commons.exec.DefaultExecutor;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -110,7 +113,7 @@ public class AppiumSingleTest {
     }
   }
 
-  public static void startAppiumServer() throws InterruptedException {
+/*  public static void startAppiumServer() throws InterruptedException {
 	    File node = findCustomNode();
 	    File appiumjs = findCustomAppiumJs();
 	//String Appium_Node_Path= "C:/Program Files (x86)/Appium/node.exe";
@@ -120,9 +123,9 @@ public class AppiumSingleTest {
     File appiumlog = new File(logdir, "appiumServerLog.txt");
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("autoAcceptAlerts", true);
-   /* service = AppiumDriverLocalService
+    service = AppiumDriverLocalService
         .buildService(new AppiumServiceBuilder().usingDriverExecutable(new File(Appium_Node_Path)).withAppiumJS(new File(Appium_JS_Path))
-            .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));*/
+            .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));
             service = AppiumDriverLocalService
         .buildService(new AppiumServiceBuilder().usingDriverExecutable(node).withAppiumJS(appiumjs)
             .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));
@@ -132,7 +135,36 @@ public class AppiumSingleTest {
     Utils.log("Service running: " + service.isRunning());
     Utils.log("Service URL:" + service.getUrl());
     assertEquals(true, service.isRunning());
-  }
+  }*/
+  
+  public static void startAppiumServer() throws InterruptedException {
+	  try
+      {
+         Utils.log("Setting Appium Server");
+         CommandLine command = new CommandLine("cmd");
+         command.addArgument("/c");
+         command.addArgument("C://Appium//node.exe");
+         command.addArgument("C://Appium//node_modules//appium//bin//appium.js");
+         command.addArgument("--address");
+         command.addArgument("127.0.0.1");
+         command.addArgument("--port");
+         command.addArgument("4723");
+         command.addArgument("--no-reset");
+         command.addArgument("--log");
+         File dir = new File(".");
+         command.addArgument(dir.getCanonicalPath() + "//appiumLogs.txt");
+         DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
+         DefaultExecutor executor = new DefaultExecutor();
+         executor.setExitValue(1);
+         executor.execute(command, resultHandler);
+         Thread.sleep(20000);
+         
+      } catch (Exception e)
+      {
+         Utils.log("Exception startAppiumServer() : " + e.getMessage());
+      }
+
+}
 
   public static void stopAppiumServer() {
     if (service != null) {
