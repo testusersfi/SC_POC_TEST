@@ -30,7 +30,7 @@ public class AppiumSingleTest {
   protected AppiumDriver<MobileElement> driver = null;
   protected static AppiumDriverLocalService service;
 
-  public static String APPIUM_SERVER_ADDRESS = "127.0.0.1";
+  public static String APPIUM_SERVER_ADDRESS = "localhost";
 
   public AppiumDriver<MobileElement> initializeDriver() throws IOException {
 
@@ -70,6 +70,7 @@ public class AppiumSingleTest {
     capabilities.setCapability("autoAcceptAlerts", true);
     capabilities.setCapability("recreateChromeDriverSessions", true);
     capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, true);
+    capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Browser");
 
 
     File classpathRoot = new File(System.getProperty("user.dir"));
@@ -79,7 +80,7 @@ public class AppiumSingleTest {
     
     
     driver =
-        new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), capabilities);
   }
 
   public void iosSetup() throws MalformedURLException {
@@ -146,7 +147,7 @@ public class AppiumSingleTest {
          command.addArgument("C://Appium//node.exe");
          command.addArgument("C://Appium//node_modules//appium//bin//appium.js");
          command.addArgument("--address");
-         command.addArgument("127.0.0.1");
+         command.addArgument("localhost");
          command.addArgument("--port");
          command.addArgument("4723");
          command.addArgument("--no-reset");
