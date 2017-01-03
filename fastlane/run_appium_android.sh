@@ -1,8 +1,8 @@
 #!/bin/bash
 set -ex
 
-#cd ../CALiveAppAutomation/
-export CHROMEDRIVER_VERSION=2.20
+#cd ../demoPOC
+#export CHROMEDRIVER_VERSION=2.20
 
 echo "Directory Setup"
 # --- SET UP ANT PATH -- #

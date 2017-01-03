@@ -30,7 +30,7 @@ public class AppiumSingleTest {
   protected AppiumDriver<MobileElement> driver = null;
   protected static AppiumDriverLocalService service;
 
-  public static String APPIUM_SERVER_ADDRESS = "localhost";
+  public static String APPIUM_SERVER_ADDRESS = "127.0.0.1";
 
   public AppiumDriver<MobileElement> initializeDriver() throws IOException {
 
@@ -114,7 +114,7 @@ public class AppiumSingleTest {
     }
   }
 
-/*  public static void startAppiumServer() throws InterruptedException {
+public static void startAppiumServer() throws InterruptedException {
 	    File node = findCustomNode();
 	    File appiumjs = findCustomAppiumJs();
 	//String Appium_Node_Path= "C:/Program Files (x86)/Appium/node.exe";
@@ -125,9 +125,6 @@ public class AppiumSingleTest {
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("autoAcceptAlerts", true);
     service = AppiumDriverLocalService
-        .buildService(new AppiumServiceBuilder().usingDriverExecutable(new File(Appium_Node_Path)).withAppiumJS(new File(Appium_JS_Path))
-            .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));
-            service = AppiumDriverLocalService
         .buildService(new AppiumServiceBuilder().usingDriverExecutable(node).withAppiumJS(appiumjs)
             .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));
     Utils.log("Service URL: " + service.getUrl().toString());
@@ -136,9 +133,9 @@ public class AppiumSingleTest {
     Utils.log("Service running: " + service.isRunning());
     Utils.log("Service URL:" + service.getUrl());
     assertEquals(true, service.isRunning());
-  }*/
+  }
   
-  public static void startAppiumServer() throws InterruptedException {
+/*  public static void startAppiumServer() throws InterruptedException {
 	  try
       {
          Utils.log("Setting Appium Server");
@@ -165,7 +162,7 @@ public class AppiumSingleTest {
          Utils.log("Exception startAppiumServer() : " + e.getMessage());
       }
 
-}
+}*/
 
   public static void stopAppiumServer() {
     if (service != null) {
