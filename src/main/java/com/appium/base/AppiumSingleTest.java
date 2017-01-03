@@ -69,7 +69,7 @@ public class AppiumSingleTest {
    //     Utils.PROPERTIES.getProperty("CHROME_DRIVER_EXECUTABLE"));
    // capabilities.setCapability("browserName", "");
     capabilities.setCapability("autoAcceptAlerts", true);
-    capabilities.setCapability("recreateChromeDriverSessions", true);
+   // capabilities.setCapability("recreateChromeDriverSessions", true);
     capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, true);
     capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Browser");
 
