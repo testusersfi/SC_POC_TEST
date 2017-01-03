@@ -14,7 +14,7 @@ echo "After Ant Home Setup"
 #Start the emulator
 echo "Booting the Emulator"
 emulator -list-avds
-emulator -avd Nexus5_API22 -wipe-data & EMULATOR_PID=$!
+emulator -avd GNexus5 -wipe-data & EMULATOR_PID=$!
 
 # Wait for Android to finish booting
 WAIT_CMD="adb wait-for-device shell getprop init.svc.bootanim"
