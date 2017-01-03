@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecuteResultHandler;
 import org.apache.commons.exec.DefaultExecutor;
+import org.apache.commons.exec.ExecuteException;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -114,7 +115,7 @@ public class AppiumSingleTest {
     }
   }
 
-public static void startAppiumServer() throws InterruptedException {
+/*public static void startAppiumServer() throws InterruptedException {
 	    File node = findCustomNode();
 	    File appiumjs = findCustomAppiumJs();
 	//String Appium_Node_Path= "C:/Program Files (x86)/Appium/node.exe";
@@ -133,9 +134,9 @@ public static void startAppiumServer() throws InterruptedException {
     Utils.log("Service running: " + service.isRunning());
     Utils.log("Service URL:" + service.getUrl());
     assertEquals(true, service.isRunning());
-  }
+  }*/
   
-/*  public static void startAppiumServer() throws InterruptedException {
+public static void startAppiumServer() throws InterruptedException {
 	  try
       {
          Utils.log("Setting Appium Server");
@@ -162,12 +163,23 @@ public static void startAppiumServer() throws InterruptedException {
          Utils.log("Exception startAppiumServer() : " + e.getMessage());
       }
 
-}*/
+}
 
-  public static void stopAppiumServer() {
-    if (service != null) {
-      service.stop();
-    }
+  public static void stopAppiumServer() throws ExecuteException, IOException, InterruptedException {
+	   Utils.log("Stopping Appium Server");
+       CommandLine command1 = new CommandLine("cmd");
+       command1.addArgument("/c");
+       command1.addArgument("taskkill");
+       command1.addArgument("/F");
+       command1.addArgument("/IM");
+       command1.addArgument("node.exe");
+       DefaultExecuteResultHandler resultHandler1 = new DefaultExecuteResultHandler();
+       DefaultExecutor executor1 = new DefaultExecutor();
+       executor1.setExitValue(1);
+       executor1.execute(command1, resultHandler1);
+       Thread.sleep(10000);
+       Utils.log("Stopped the Appium Server");
+
   }
   
 }
