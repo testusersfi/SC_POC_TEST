@@ -80,7 +80,7 @@ public class AppiumSingleTest {
     
     
     driver =
-        new AndroidDriver<MobileElement>(new URL("http://192.168.56.1:4723/wd/hub"), capabilities);
+        new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
   }
 
   public void iosSetup() throws MalformedURLException {
@@ -147,7 +147,7 @@ public class AppiumSingleTest {
          command.addArgument("C://Appium//node.exe");
          command.addArgument("C://Appium//node_modules//appium//bin//appium.js");
          command.addArgument("--address");
-         command.addArgument("localhost");
+         command.addArgument("127.0.0.1");
          command.addArgument("--port");
          command.addArgument("4723");
          command.addArgument("--no-reset");
@@ -158,7 +158,7 @@ public class AppiumSingleTest {
          DefaultExecutor executor = new DefaultExecutor();
          executor.setExitValue(1);
          executor.execute(command, resultHandler);
-         Thread.sleep(60000*3);
+         Thread.sleep(60000*2);
          
       } catch (Exception e)
       {
