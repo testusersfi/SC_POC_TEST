@@ -52,7 +52,7 @@ public class AppiumSingleTest {
   public void androidSetup() throws MalformedURLException {
     DesiredCapabilities capabilities = DesiredCapabilities.android();
     capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.APPIUM);
-    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "GNexus5");
+    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Nexus5_API22");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,
         Utils.PROPERTIES.getProperty("ANDROID_PLATFORM_VERSION"));
@@ -67,11 +67,10 @@ public class AppiumSingleTest {
 
    // capabilities.setCapability("chromedriverExecutable",
    //     Utils.PROPERTIES.getProperty("CHROME_DRIVER_EXECUTABLE"));
-   // capabilities.setCapability("browserName", "");
+   //capabilities.setCapability("browserName", "");
     capabilities.setCapability("autoAcceptAlerts", true);
-   // capabilities.setCapability("recreateChromeDriverSessions", true);
+    capabilities.setCapability("recreateChromeDriverSessions", true);
     capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, true);
-    capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Browser");
 
 
     File classpathRoot = new File(System.getProperty("user.dir"));
@@ -142,7 +141,7 @@ public static void startAppiumServer() throws InterruptedException {
          Utils.log("Setting Appium Server");
          CommandLine command = new CommandLine("cmd");
          command.addArgument("/c");
-         command.addArgument("C://Program/ Files/npm/node.exe");
+         command.addArgument("C://Progra~1//npm//node.exe");
          command.addArgument("C://Users//srinivas.bavirisetti//AppData//Roaming//npm//node_modules//appium//build//lib//main.js");
          command.addArgument("--address");
          command.addArgument("127.0.0.1");
@@ -156,7 +155,7 @@ public static void startAppiumServer() throws InterruptedException {
          DefaultExecutor executor = new DefaultExecutor();
          executor.setExitValue(1);
          executor.execute(command, resultHandler);
-         Thread.sleep(60000*2);
+         Thread.sleep(40000);
          
       } catch (Exception e)
       {
@@ -171,7 +170,7 @@ public static void startAppiumServer() throws InterruptedException {
        command1.addArgument("taskkill");
        command1.addArgument("/F");
        command1.addArgument("/IM");
-       command1.addArgument("C://Program/ Files//npm//node.exe");
+       command1.addArgument("node.exe");
        DefaultExecuteResultHandler resultHandler1 = new DefaultExecuteResultHandler();
        DefaultExecutor executor1 = new DefaultExecutor();
        executor1.setExitValue(1);
