@@ -171,7 +171,7 @@ public static void startAppiumServer() throws InterruptedException {
        command1.addArgument("taskkill");
        command1.addArgument("/F");
        command1.addArgument("/IM");
-       command1.addArgument("C://Program Files//npm//node.exe");
+       command1.addArgument("C://Program/ Files//npm//node.exe");
        DefaultExecuteResultHandler resultHandler1 = new DefaultExecuteResultHandler();
        DefaultExecutor executor1 = new DefaultExecutor();
        executor1.setExitValue(1);
