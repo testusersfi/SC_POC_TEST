@@ -114,7 +114,7 @@ public class AppiumSingleTest {
     }
   }
 
-/*public static void startAppiumServer() throws InterruptedException {
+public static void startAppiumServer() throws InterruptedException {
 	    File node = findCustomNode();
 	    File appiumjs = findCustomAppiumJs();
 	//String Appium_Node_Path= "C:/Program Files (x86)/Appium/node.exe";
@@ -133,9 +133,9 @@ public class AppiumSingleTest {
     Utils.log("Service running: " + service.isRunning());
     Utils.log("Service URL:" + service.getUrl());
     assertEquals(true, service.isRunning());
-  }*/
+  }
   
-public static void startAppiumServer() throws InterruptedException {
+/*public static void startAppiumServer() throws InterruptedException {
 	  try
       {
          Utils.log("Setting Appium Server");
@@ -162,7 +162,7 @@ public static void startAppiumServer() throws InterruptedException {
          Utils.log("Exception startAppiumServer() : " + e.getMessage());
       }
 
-}
+}*/
   public static void stopAppiumServer() throws ExecuteException, IOException, InterruptedException {
 	   Utils.log("Stopping Appium Server");
 	   CommandLine command1 = new CommandLine("cmd");
