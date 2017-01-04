@@ -52,7 +52,7 @@ public class AppiumSingleTest {
   public void androidSetup() throws MalformedURLException {
     DesiredCapabilities capabilities = DesiredCapabilities.android();
     capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.APPIUM);
-    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
+    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Nexus5_API22");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,
         Utils.PROPERTIES.getProperty("ANDROID_PLATFORM_VERSION"));
@@ -115,7 +115,7 @@ public class AppiumSingleTest {
     }
   }
 
-/*public static void startAppiumServer() throws InterruptedException {
+public static void startAppiumServer() throws InterruptedException {
 	    File node = findCustomNode();
 	    File appiumjs = findCustomAppiumJs();
 	//String Appium_Node_Path= "C:/Program Files (x86)/Appium/node.exe";
@@ -134,16 +134,17 @@ public class AppiumSingleTest {
     Utils.log("Service running: " + service.isRunning());
     Utils.log("Service URL:" + service.getUrl());
     assertEquals(true, service.isRunning());
-  }*/
+  }
   
-public static void startAppiumServer() throws InterruptedException {
+/*public static void startAppiumServer() throws InterruptedException {
 	  try
       {
          Utils.log("Setting Appium Server");
          CommandLine command = new CommandLine("cmd");
-         command.addArgument("/c");
-         command.addArgument("C://Appium//node.exe");
-         command.addArgument("C://Appium//node_modules//appium//bin//appium.js");
+         //command.addArgument("/c");
+         //command.addArgument("C://Appium//node.exe");
+         //command.addArgument("C://Appium//node_modules//appium//bin//appium.js");
+         command.addArgument("appium");
          command.addArgument("--address");
          command.addArgument("127.0.0.1");
          command.addArgument("--port");
@@ -164,7 +165,7 @@ public static void startAppiumServer() throws InterruptedException {
       }
 
 }
-
+*/
   public static void stopAppiumServer() throws ExecuteException, IOException, InterruptedException {
 	   Utils.log("Stopping Appium Server");
        CommandLine command1 = new CommandLine("cmd");
