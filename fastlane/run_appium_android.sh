@@ -2,7 +2,7 @@
 set -ex
 
 #cd ../demoPOC
-export CHROMEDRIVER_VERSION=2.13
+#export CHROMEDRIVER_VERSION=2.20
 
 echo "Directory Setup"
 # --- SET UP ANT PATH -- #
