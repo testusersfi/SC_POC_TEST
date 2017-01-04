@@ -168,17 +168,9 @@ public static void startAppiumServer() throws InterruptedException {
 */
   public static void stopAppiumServer() throws ExecuteException, IOException, InterruptedException {
 	   Utils.log("Stopping Appium Server");
-       CommandLine command1 = new CommandLine("cmd");
-       command1.addArgument("/c");
-       command1.addArgument("taskkill");
-       command1.addArgument("/F");
-       command1.addArgument("/IM");
-       command1.addArgument("node.exe");
-       DefaultExecuteResultHandler resultHandler1 = new DefaultExecuteResultHandler();
-       DefaultExecutor executor1 = new DefaultExecutor();
-       executor1.setExitValue(1);
-       executor1.execute(command1, resultHandler1);
-       Thread.sleep(10000);
+	    if (service != null) {
+	        service.stop();
+	      }
        Utils.log("Stopped the Appium Server");
 
   }
