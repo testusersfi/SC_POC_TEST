@@ -142,7 +142,7 @@ public static void startAppiumServer() throws InterruptedException {
          Utils.log("Setting Appium Server");
          CommandLine command = new CommandLine("cmd");
          command.addArgument("/c");
-         command.addArgument("C:/Program Files/npm/node.exe");
+         command.addArgument("C://Program/ Files/npm/node.exe");
          command.addArgument("C://Users//srinivas.bavirisetti//AppData//Roaming//npm//node_modules//appium//build//lib//main.js");
          command.addArgument("--address");
          command.addArgument("127.0.0.1");
