@@ -52,7 +52,7 @@ public class AppiumSingleTest {
   public void androidSetup() throws MalformedURLException {
     DesiredCapabilities capabilities = DesiredCapabilities.android();
     capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.APPIUM);
-    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Nexus5_API22");
+    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "NEXUS_5");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,
         Utils.PROPERTIES.getProperty("ANDROID_PLATFORM_VERSION"));
@@ -69,7 +69,7 @@ public class AppiumSingleTest {
    //     Utils.PROPERTIES.getProperty("CHROME_DRIVER_EXECUTABLE"));
    //capabilities.setCapability("browserName", "");
     capabilities.setCapability("autoAcceptAlerts", true);
-    capabilities.setCapability("recreateChromeDriverSessions", true);
+   // capabilities.setCapability("recreateChromeDriverSessions", true);
     capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, true);
 
 
