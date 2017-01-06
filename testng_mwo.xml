@@ -8,7 +8,7 @@
 			<!-- Test Type: Regression, Smoke -->
 			<!-- Test Platform: Android, iOS -->
 			<define name="Final.All">
-				<include name="Final.*"/>
+				<include name="Final.Regression.Android"/>
 			</define>
 			<define name="Dev.All">
 				<include name="Dev.*"/>
