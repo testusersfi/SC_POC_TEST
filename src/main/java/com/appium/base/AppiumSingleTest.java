@@ -62,14 +62,7 @@ public class AppiumSingleTest {
         Utils.PROPERTIES.getProperty("ANDROID_APP_PACKAGE"));
     capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,
         Utils.PROPERTIES.getProperty("ANDROID_APP_ACTIVITY"));
-
-    //capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 200);
-
-   // capabilities.setCapability("chromedriverExecutable",
-   //     Utils.PROPERTIES.getProperty("CHROME_DRIVER_EXECUTABLE"));
-   //capabilities.setCapability("browserName", "");
     capabilities.setCapability("autoAcceptAlerts", true);
-   // capabilities.setCapability("recreateChromeDriverSessions", true);
     capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, true);
 
 
@@ -117,9 +110,6 @@ public class AppiumSingleTest {
 public static void startAppiumServer() throws InterruptedException {
 	    File node = findCustomNode();
 	    File appiumjs = findCustomAppiumJs();
-	//String Appium_Node_Path= "C:/Program Files (x86)/Appium/node.exe";
-	//String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/bin/appium.js";
-    //String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/lib/server/main.js";
     File logdir = Utils.getChildDir("log");
     File appiumlog = new File(logdir, "appiumServerLog.txt");
     DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -135,49 +125,10 @@ public static void startAppiumServer() throws InterruptedException {
     assertEquals(true, service.isRunning());
   }
   
-/*public static void startAppiumServer() throws InterruptedException {
-	  try
-      {
-         Utils.log("Setting Appium Server");
-         CommandLine command = new CommandLine("cmd");
-         command.addArgument("/c");
-         command.addArgument("C://Progra~1//npm//node.exe");
-         command.addArgument("C://Users//srinivas.bavirisetti//AppData//Roaming//npm//node_modules//appium//build//lib//main.js");
-         command.addArgument("--address");
-         command.addArgument("127.0.0.1");
-         command.addArgument("--port");
-         command.addArgument("4723");
-         command.addArgument("--no-reset");
-         command.addArgument("--log");
-         File dir = new File(".");
-         command.addArgument(dir.getCanonicalPath() + "//appiumLogs.txt");
-         DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
-         DefaultExecutor executor = new DefaultExecutor();
-         executor.setExitValue(1);
-         executor.execute(command, resultHandler);
-         Thread.sleep(40000);
-         
-      } catch (Exception e)
-      {
-         Utils.log("Exception startAppiumServer() : " + e.getMessage());
-      }
-
-}*/
   public static void stopAppiumServer() throws ExecuteException, IOException, InterruptedException {
-	   Utils.log("Stopping Appium Server");
-	   CommandLine command1 = new CommandLine("cmd");
-       command1.addArgument("/c");
-       command1.addArgument("taskkill");
-       command1.addArgument("/F");
-       command1.addArgument("/IM");
-       command1.addArgument("node.exe");
-       DefaultExecuteResultHandler resultHandler1 = new DefaultExecuteResultHandler();
-       DefaultExecutor executor1 = new DefaultExecutor();
-       executor1.setExitValue(1);
-       executor1.execute(command1, resultHandler1);
-       Thread.sleep(10000);
-       Utils.log("Stopped the Appium Server");
-
+	    if (service != null) {
+	        service.stop();
+	      }
   }
   
 }

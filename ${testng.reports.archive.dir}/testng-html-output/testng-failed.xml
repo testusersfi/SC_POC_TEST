@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [POC_Automation_TestSuite]">
+  <test name="Test(failed)">
+    <groups>
+      <run>
+        <include name="Final.All"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="poc_app.tests.LoginTests">
+        <methods>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="testValidLogin"/>
+          <include name="afterMethod"/>
+          <include name="testInValidLogin"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- poc_app.tests.LoginTests -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [POC_Automation_TestSuite] -->

@@ -37,7 +37,7 @@ echo "Started logcat to capture the logs."
 #-- CHECK ANT VERSION --#
 echo "Starting the tests now..."
 ant -version
-ant -f build.xml -Dplatform=android -DAPPNAME=mwo runtestngtests
+ant -f build.xml -Dplatform=android -DAPPNAME=testapp runtestngtests
 echo "Test execution completed."
 
 # Stop the background processes

@@ -199,8 +199,7 @@ public class Utils {
         for (index = lastCommonRoot + 1; index < relativeDirectories.length - 1; index++) {
           relativePath.append(relativeDirectories[index] + "/");
         }
-        // relativePath.append(relativeDirectories[relativeDirectories.length
-        // - 1]);
+
         int lastPiece = relativeDirectories.length - 1;
         if (lastPiece > lastCommonRoot) {
           relativePath.append(relativeDirectories[lastPiece]);
@@ -219,7 +218,5 @@ public class Utils {
         + driver.getCapabilities().getPlatform().toString());
     Utils.log("Utils.getDriverPlatform(driver) = " + driver.toString().split(":")[0].trim());
     return driver.toString().split(":")[0].trim();
-    // AndroidDriver
-    // IOSDriver
   }
 }

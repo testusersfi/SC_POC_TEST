@@ -9,8 +9,8 @@
 
 	<!-- Load the app specific property file -->
 	<target name="test.app.name">
-		<condition property="is_mwo">
-			<equals arg1="${APPNAME}" arg2="mwo" />
+		<condition property="is_testapp">
+			<equals arg1="${APPNAME}" arg2="testapp" />
 		</condition>
 	</target>
 	
@@ -18,12 +18,12 @@
 	<echo message="APPNAME = ${APPNAME}"/>
 	<echo message="APP SPECIFIC PROPERTY = app_${APPNAME}.properties"/>
 	
-	<target name="load_mwo_properties" if="${is_mwo}" depends="test.app.name">
-		<property file="app_mwo.properties" />
+	<target name="load_testapp_properties" if="${is_testapp}" depends="test.app.name">
+		<property file="app_testapp.properties" />
 	</target>
 
 
-	<target name="load_app_properties" depends="load_mwo_properties">
+	<target name="load_app_properties" depends="load_testapp_properties">
 		<!-- Then load the other property files -->
 		<property File="config.properties" />
 

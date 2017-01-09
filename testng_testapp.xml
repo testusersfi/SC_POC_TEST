@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="POC_Automation_TestSuite">
+	<test name="Test">
+		<groups>
+			<!-- Group Naming Pattern={ "TestStatus.TestType.TestPlatform" } -->
+			<!-- Test Status: Dev, Final -->
+			<!-- Test Type: Regression, Smoke -->
+			<!-- Test Platform: Android, iOS -->
+			<define name="Final.All">
+				<include name="Final.Regression.Android"/>
+			</define>
+			<define name="Dev.All">
+				<include name="Dev.*"/>
+			</define>
+			<define name="Testing">
+				<include name="Testing"/>
+			</define>
+		    <run>
+     			<!-- <include name="fail.android" /> -->
+     			<include name="Final.All" />
+    		</run>
+  		</groups>
+		<classes>
+			<class name= "poc_app.tests.LoginTests" /> 
+		</classes>
+	</test> 
+</suite>
