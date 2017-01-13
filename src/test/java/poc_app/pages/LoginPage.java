@@ -41,6 +41,7 @@ public class LoginPage extends PageBase {
   
   public void enterUserName(String email) {
 	  // Clear and enter text in UserName Field
+	  waitForPageToLoad(driver, loginPageObjects.LOGIN_USERNAME_FIELD);
       loginPageObjects.LOGIN_USERNAME_FIELD.clear();
       loginPageObjects.LOGIN_USERNAME_FIELD.click();
       loginPageObjects.LOGIN_USERNAME_FIELD.sendKeys(email);
@@ -50,6 +51,7 @@ public class LoginPage extends PageBase {
   
   public void enterPassWord(String Password) {
       // Clear and Enter Text in PassWord Field
+	  waitForPageToLoad(driver, loginPageObjects.LOGIN_PASSWORD_FIELD);
       loginPageObjects.LOGIN_PASSWORD_FIELD.clear();
       loginPageObjects.LOGIN_PASSWORD_FIELD.click();
       loginPageObjects.LOGIN_PASSWORD_FIELD.sendKeys(Password);
