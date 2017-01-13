@@ -59,11 +59,12 @@ public class LoginPage extends PageBase {
       hideKeyboardBasedOnPlatform();  
   }
   
-  public void invalidLoginVerification(String Email, String Pwd) {
+  public void invalidLoginVerification(String Email, String Pwd) throws InterruptedException {
 	  waitForPageToLoad(driver, loginPageObjects.SCREEN_HEADER);
 	  Utils.captureInterimScreenshot(driver);
 	  enterUserName(Email);
 	  enterPassWord(Pwd);  
+	  Thread.sleep(1000);
       // Click on Login Button
       if (isElementPresent(loginPageObjects.SIGNIN_BUTTON)) {
         loginPageObjects.SIGNIN_BUTTON.click();
