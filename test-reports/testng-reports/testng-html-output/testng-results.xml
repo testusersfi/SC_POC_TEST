@@ -8,7 +8,7 @@
       <![CDATA[We are in Android, now checking for Alert messages...]]>
     </line>
   </reporter-output>
-  <suite name="POC_Automation_TestSuite" duration-ms="140144" started-at="2017-01-13T11:21:54Z" finished-at="2017-01-13T11:24:14Z">
+  <suite name="POC_Automation_TestSuite" duration-ms="118496" started-at="2017-01-16T14:23:56Z" finished-at="2017-01-16T14:25:54Z">
     <groups>
       <group name="Final.Regression.iOS">
         <method signature="LoginTests.testInValidLogin()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="testInValidLogin" class="poc_app.tests.LoginTests"/>
@@ -19,17 +19,17 @@
         <method signature="LoginTests.testValidLogin()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="testValidLogin" class="poc_app.tests.LoginTests"/>
       </group> <!-- Final.Regression.Android -->
     </groups>
-    <test name="Test" duration-ms="140144" started-at="2017-01-13T11:21:54Z" finished-at="2017-01-13T11:24:14Z">
+    <test name="Test" duration-ms="118496" started-at="2017-01-16T14:23:56Z" finished-at="2017-01-16T14:25:54Z">
       <class name="poc_app.tests.LoginTests">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="beforeSuite" is-config="true" duration-ms="28779" started-at="2017-01-13T16:51:25Z" finished-at="2017-01-13T16:51:54Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="beforeSuite" is-config="true" duration-ms="128" started-at="2017-01-16T14:23:56Z" finished-at="2017-01-16T14:23:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-01-13T16:51:54Z" finished-at="2017-01-13T16:51:54Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-01-16T14:23:56Z" finished-at="2017-01-16T14:23:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="beforeMethod" is-config="true" duration-ms="26917" started-at="2017-01-13T16:51:54Z" finished-at="2017-01-13T16:52:21Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="beforeMethod" is-config="true" duration-ms="24225" started-at="2017-01-16T14:23:56Z" finished-at="2017-01-16T14:24:20Z">
           <params>
             <param index="0">
               <value>
@@ -40,14 +40,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testInValidLogin()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="testInValidLogin" duration-ms="33580" started-at="2017-01-13T16:52:21Z" finished-at="2017-01-13T16:52:54Z">
+        <test-method status="PASS" signature="testInValidLogin()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="testInValidLogin" duration-ms="34880" started-at="2017-01-16T14:24:20Z" finished-at="2017-01-16T14:24:55Z">
           <reporter-output>
             <line>
               <![CDATA[We are in Android, now checking for Alert messages...]]>
             </line>
           </reporter-output>
         </test-method> <!-- testInValidLogin -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="afterMethod" is-config="true" duration-ms="9554" started-at="2017-01-13T16:52:54Z" finished-at="2017-01-13T16:53:04Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="afterMethod" is-config="true" duration-ms="5498" started-at="2017-01-16T14:24:55Z" finished-at="2017-01-16T14:25:00Z">
           <params>
             <param index="0">
               <value>
@@ -58,7 +58,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="beforeMethod" is-config="true" duration-ms="26202" started-at="2017-01-13T16:53:04Z" finished-at="2017-01-13T16:53:30Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="beforeMethod" is-config="true" duration-ms="15993" started-at="2017-01-16T14:25:00Z" finished-at="2017-01-16T14:25:16Z">
           <params>
             <param index="0">
               <value>
@@ -69,14 +69,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testValidLogin()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="testValidLogin" duration-ms="36523" started-at="2017-01-13T16:53:30Z" finished-at="2017-01-13T16:54:07Z">
+        <test-method status="PASS" signature="testValidLogin()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="testValidLogin" duration-ms="33171" started-at="2017-01-16T14:25:16Z" finished-at="2017-01-16T14:25:49Z">
           <reporter-output>
             <line>
               <![CDATA[We are in Android, now checking for Alert messages...]]>
             </line>
           </reporter-output>
         </test-method> <!-- testValidLogin -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="afterMethod" is-config="true" duration-ms="7355" started-at="2017-01-13T16:54:07Z" finished-at="2017-01-13T16:54:14Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="afterMethod" is-config="true" duration-ms="4718" started-at="2017-01-16T14:25:49Z" finished-at="2017-01-16T14:25:54Z">
           <params>
             <param index="0">
               <value>
@@ -87,11 +87,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-01-13T16:54:14Z" finished-at="2017-01-13T16:54:14Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="afterClass" is-config="true" duration-ms="1" started-at="2017-01-16T14:25:54Z" finished-at="2017-01-16T14:25:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="afterSuite" is-config="true" duration-ms="1843" started-at="2017-01-13T16:54:14Z" finished-at="2017-01-13T16:54:16Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:poc_app.tests.LoginTests@3e6358]" name="afterSuite" is-config="true" duration-ms="0" started-at="2017-01-16T14:25:54Z" finished-at="2017-01-16T14:25:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

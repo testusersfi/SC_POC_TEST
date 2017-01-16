@@ -52,7 +52,7 @@ public class AppiumSingleTest {
   public void androidSetup() throws MalformedURLException {
     DesiredCapabilities capabilities = DesiredCapabilities.android();
     capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.APPIUM);
-    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
+    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "ZX1D649MCF");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,
         Utils.PROPERTIES.getProperty("ANDROID_PLATFORM_VERSION"));
@@ -64,7 +64,7 @@ public class AppiumSingleTest {
         Utils.PROPERTIES.getProperty("ANDROID_APP_ACTIVITY"));
     capabilities.setCapability("autoAcceptAlerts", true);
     capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, true);
-
+    capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
 
     File classpathRoot = new File(System.getProperty("user.dir"));
     File app = new File(Utils.PROPERTIES.getProperty("ANDROID_APP_PATH"));
