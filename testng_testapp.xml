@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="POC_Automation_TestSuite">
-	<test name="Test">
+	<test name="Tests">
 		<groups>
 			<!-- Group Naming Pattern={ "TestStatus.TestType.TestPlatform" } -->
 			<!-- Test Status: Dev, Final -->

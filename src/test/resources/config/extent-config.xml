@@ -14,7 +14,7 @@
 		<protocol>https</protocol>
 
 		<!-- title of the document -->
-		<documentTitle>ExtentReports | TestApp Automation POC</documentTitle>
+		<documentTitle>ExtentReports | TestAppAutomationReports</documentTitle>
 
 		<!-- report name - displayed at top-nav -->
 		<reportName>Test Automation POC Report</reportName>
