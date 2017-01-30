@@ -1,8 +1,11 @@
 package com.appium.testng;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -15,13 +18,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import com.annotation.values.Description;
 import com.appium.base.AppiumSingleTest;
 import com.appium.base.Utils;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.report.factory.ExtentManager;
-import com.report.factory.ExtentTestManager;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -29,11 +31,14 @@ import io.appium.java_client.MobileElement;
 public class TestBaseStandalone extends AppiumSingleTest {
 
   protected static ExtentReports extent;
-  protected static ExtentTest test;
+  protected static ExtentTest parent;
+  protected static ExtentTest child;
   protected File scrTmp;
   protected File scrFile;
   private static String testClassName;
   protected AppiumDriver<MobileElement> driver;
+  
+  private Map<Long, ExtentTest> parentContext = new HashMap<Long, ExtentTest>();
 
   public TestBaseStandalone() throws Exception {
 
@@ -49,9 +54,8 @@ public class TestBaseStandalone extends AppiumSingleTest {
    */
   @BeforeSuite(alwaysRun = true)
   public void beforeSuite() throws Exception {
-    extent = ExtentManager.getInstance();
-    ExtentTestManager.loadConfig();
-    //startAppiumServer();
+	    extent = Utils.initialiseExtentReports();
+	    startAppiumServer();
     // ExtentManager.getInstance().logRunnerHeading("Final Screenshots");
     // extent.setTestRunnerOutput("<div class='row'>");
   }
@@ -63,51 +67,55 @@ public class TestBaseStandalone extends AppiumSingleTest {
    */
   @AfterSuite(alwaysRun = true)
   public void afterSuite() throws Exception {
-    //stopAppiumServer();
-    extent.setTestRunnerOutput("</div");
+    stopAppiumServer();
+   extent.setTestRunnerOutput("</div");
     // ExtentManager.getInstance().logRunnerHeading("Reporter Output (Before
     // & After Class Method Logs)");
     // ExtentManager.getInstance().logFinalReporterLog();
     // ExtentManager.getInstance().closeAndBackUp();
+   Utils.closeExtentReports();
   }
 
   @BeforeClass(alwaysRun = true)
   public void beforeClass() throws Exception {
-    // driver = new DriverManager().getDriver();
+	    String className = getClass().getSimpleName();
+	    String classDescription = "";
+	    if (getClass().getAnnotation(Description.class) != null) {
+	      classDescription = getClass().getAnnotation(Description.class).value();
+	    }
+	    parent = Utils.startExtentTest(className, classDescription);
+	    parentContext.put(Thread.currentThread().getId(), parent);
   }
 
   @AfterClass(alwaysRun = true)
   public void afterClass() throws Exception {
-    // new DriverManager().destroyDriver();
-    // ExtentManager.getInstance().logClassReporterOutput(testClassName);
+	    Utils.getExtentReports().endTest(parent);
+	    Utils.getExtentReports().flush();
   }
 
   @BeforeMethod(alwaysRun = true)
   public void beforeMethod(Method caller) throws Exception {
-    test = ExtentTestManager.startTest(caller.getName(), caller.getClass().getSimpleName(),
-        "Standalone");
-    // From beforeClass
-    driver = super.initializeDriver();
-    Utils.log(">> " + caller.getDeclaringClass().getSimpleName() + "." + caller.getName()
-        + " > START > Driver = " + driver);
+	  child = Utils.startExtentTest(caller.getName(), caller.getClass().getSimpleName());
+	    // From beforeClass
+	    driver = super.initializeDriver();
+	    Utils.log(">> " + caller.getDeclaringClass().getSimpleName() + "." + caller.getName());
   }
 
   @AfterMethod(alwaysRun = true)
   public void afterMethod(ITestResult result) throws Exception {
-    if (result.getStatus() == ITestResult.FAILURE) {
-      ExtentTestManager.getTest().log(LogStatus.FAIL, result.getThrowable());
-    } else if (result.getStatus() == ITestResult.SKIP) {
-      ExtentTestManager.getTest().log(LogStatus.SKIP, "Test skipped " + result.getThrowable());
-    } else {
-      ExtentTestManager.getTest().log(LogStatus.PASS, "Test passed");
-    }
+		if (result.getStatus() == ITestResult.FAILURE) {
+			Utils.getExtentTest().log(LogStatus.FAIL, result.getThrowable());
+		} else if (result.getStatus() == ITestResult.SKIP) {
+			Utils.getExtentTest().log(LogStatus.SKIP, "Test skipped " + result.getThrowable());
+		} else {
+			Utils.getExtentTest().log(LogStatus.PASS, "Test passed");
+		}
     // Add Final Screenshot
     testClassName = result.getTestClass().getRealClass().getSimpleName();
     captureFinalScreenshot(testClassName, result.getMethod().getMethodName());
-    Utils.log("<< " + testClassName + "." + result.getMethod().getMethodName()
-        + " < END < Driver = " + driver);
-    ExtentManager.getInstance().endTest(ExtentTestManager.getTest());
-    ExtentManager.getInstance().flush();
+    Utils.log("<< " + testClassName + "." + result.getMethod().getMethodName());
+    parentContext.get(Thread.currentThread().getId()).appendChild(child);
+    Utils.getExtentReports().flush();
     // From afterClass
     driver.quit();
   }
@@ -116,16 +124,15 @@ public class TestBaseStandalone extends AppiumSingleTest {
     scrTmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     scrFile = new File(new File(Utils.SCREENSHOTS_DIRNAME), Utils.PROPERTIES.getProperty("platform")
         + "_final_" + className + "_" + methodName + ".png");
+    Utils.log("ScrFile:" + scrFile.toString());
     String scrFileRelPath;
     try {
       FileUtils.copyFile(scrTmp, scrFile);
     } catch (IOException e) {
       e.printStackTrace();
     }
-    scrFileRelPath = Utils.convertToRelativePath(System.getProperty("user.dir") + "/target/",
-        scrFile.getAbsolutePath());
-    test.log(LogStatus.INFO, "Final Screenshot => " + test.addScreenCapture(scrFileRelPath));
-    // ExtentManager.getInstance().logFinalScreenshot(scrFileRelPath,
-    // methodName);
+    scrFileRelPath = Utils.convertToRelativePath(Utils.EXTENT_REPORTS_DIRNAME, scrFile.getAbsolutePath());
+    Utils.log("ScrFilerelPath:" + scrFileRelPath);
+    child.log(LogStatus.INFO, "Final Screenshot => " + parent.addScreenCapture(scrFileRelPath));
   }
 }

@@ -9,7 +9,7 @@ import com.appium.base.PageBase;
 import com.appium.base.Utils;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
-import com.report.factory.ExtentTestManager;
+import com.appium.reports.ExtentTestManager;
 
 import poc_app.pageobjects.LoginPageObjects;
 import io.appium.java_client.AppiumDriver;
@@ -72,6 +72,7 @@ public class LoginPage extends PageBase {
       }
 	  if(loginPageObjects.FAILURE_ALERT_MESSAGE.isDisplayed()) {
 		  ExtentTestManager.getTest().log(LogStatus.PASS, "Login failed with invalid credentials");
+		  Utils.captureInterimScreenshot(driver);
 		  loginPageObjects.ALERT_BUTTON.click();
 	  } else {
 		  ExtentTestManager.getTest().log(LogStatus.FAIL, "invalid error");

@@ -9,7 +9,7 @@ import com.appium.base.PageBase;
 import com.appium.base.Utils;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
-import com.report.factory.ExtentTestManager;
+import com.appium.reports.ExtentTestManager;
 
 import poc_app.pageobjects.HomePageObjects;
 import io.appium.java_client.AppiumDriver;

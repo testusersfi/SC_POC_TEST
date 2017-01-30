@@ -53,9 +53,8 @@ public class AppiumSingleTest {
     DesiredCapabilities capabilities = DesiredCapabilities.android();
     capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.APPIUM);
     capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, Utils.PROPERTIES.getProperty("DEVICE_ID"));
-    capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-    capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,
-        Utils.PROPERTIES.getProperty("ANDROID_PLATFORM_VERSION"));
+    capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "android");
+    capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, Utils.PROPERTIES.getProperty("ANDROID_PLATFORM_VERSION"));
     capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,
         Utils.PROPERTIES.getProperty("ANDROID_APP_PACKAGE"));
     capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_PACKAGE,
@@ -65,6 +64,7 @@ public class AppiumSingleTest {
     capabilities.setCapability("autoAcceptAlerts", true);
     capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, true);
     capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+    capabilities.setCapability("browserName", "");
 
     File classpathRoot = new File(System.getProperty("user.dir"));
     File app = new File(Utils.PROPERTIES.getProperty("ANDROID_APP_PATH"));
@@ -72,8 +72,7 @@ public class AppiumSingleTest {
     Utils.log("----APK Absolute Path: " + app.getAbsolutePath());
     
     
-    driver =
-        new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+    driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
   }
 
   public void iosSetup() throws MalformedURLException {
@@ -107,23 +106,23 @@ public class AppiumSingleTest {
     }
   }
 
-public static void startAppiumServer() throws InterruptedException {
+  public static void startAppiumServer() throws InterruptedException {
 	    File node = findCustomNode();
 	    File appiumjs = findCustomAppiumJs();
-    File logdir = Utils.getChildDir("log");
-    File appiumlog = new File(logdir, "appiumServerLog.txt");
-    DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setCapability("autoAcceptAlerts", true);
-    service = AppiumDriverLocalService
-        .buildService(new AppiumServiceBuilder().usingDriverExecutable(node).withAppiumJS(appiumjs)
-            .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));
-    Utils.log("Service URL: " + service.getUrl().toString());
-    Thread.sleep(12000);
-    service.start();
-    Utils.log("Service running: " + service.isRunning());
-    Utils.log("Service URL:" + service.getUrl());
-    assertEquals(true, service.isRunning());
-  }
+  File logdir = Utils.getChildDir("log");
+  File appiumlog = new File(logdir, "appiumServerLog.txt");
+  DesiredCapabilities capabilities = new DesiredCapabilities();
+  capabilities.setCapability("autoAcceptAlerts", true);
+  service = AppiumDriverLocalService
+      .buildService(new AppiumServiceBuilder().usingDriverExecutable(node).withAppiumJS(appiumjs)
+          .withIPAddress(APPIUM_SERVER_ADDRESS).usingPort(4723).withLogFile(appiumlog));
+  Utils.log("Service URL: " + service.getUrl().toString());
+  Thread.sleep(12000);
+  service.start();
+  Utils.log("Service running: " + service.isRunning());
+  Utils.log("Service URL:" + service.getUrl());
+  assertEquals(true, service.isRunning());
+}
   
   public static void stopAppiumServer() throws ExecuteException, IOException, InterruptedException {
 	    if (service != null) {
