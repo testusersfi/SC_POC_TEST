@@ -51,7 +51,7 @@ public class TestBaseStandalone extends AppiumSingleTest {
   public void beforeSuite() throws Exception {
     extent = ExtentManager.getInstance();
     ExtentTestManager.loadConfig();
-    startAppiumServer();
+    //startAppiumServer();
     // ExtentManager.getInstance().logRunnerHeading("Final Screenshots");
     // extent.setTestRunnerOutput("<div class='row'>");
   }
@@ -63,7 +63,7 @@ public class TestBaseStandalone extends AppiumSingleTest {
    */
   @AfterSuite(alwaysRun = true)
   public void afterSuite() throws Exception {
-    stopAppiumServer();
+    //stopAppiumServer();
     extent.setTestRunnerOutput("</div");
     // ExtentManager.getInstance().logRunnerHeading("Reporter Output (Before
     // & After Class Method Logs)");

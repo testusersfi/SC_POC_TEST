@@ -52,7 +52,7 @@ public class AppiumSingleTest {
   public void androidSetup() throws MalformedURLException {
     DesiredCapabilities capabilities = DesiredCapabilities.android();
     capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.APPIUM);
-    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "ZX1D649MCF");
+    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, Utils.PROPERTIES.getProperty("DEVICE_ID"));
     capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,
         Utils.PROPERTIES.getProperty("ANDROID_PLATFORM_VERSION"));
